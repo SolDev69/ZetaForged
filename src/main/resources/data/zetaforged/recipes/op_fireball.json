@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ooo",
+    "opo",
+    "ooo"
+  ],
+  "key": {
+    "p": {
+      "item": "minecraft:fire_charge"
+    },
+    "o": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "zetaforged:op_fireball",
+    "count": 1
+  }
+}

@@ -1,0 +1,22 @@
+{
+	"type": "crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:emerald"
+		},
+		{
+			"item": "minecraft:diamond"
+		},
+		{
+			"item": "minecraft:emerald"
+		},
+		{
+			"item": "minecraft:emerald"
+		}
+	],
+	"result": {
+		"item": "minecraft:diamond_block",
+		"count": 1
+
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:overworld_caves",
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": 0,
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "seed": 0,
+      "biome": "zetaforged:concerning"
+    },
+    "settings": "minecraft:caves"
+  }
+}

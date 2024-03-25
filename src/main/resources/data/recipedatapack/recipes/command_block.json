@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "WRW",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:terracotta"
+        },
+        "W": {
+            "item": "minecraft:white_terracotta"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        }
+    },
+    "result": {
+        "item": "minecraft:command_block",
+        "count": 1
+    }
+}

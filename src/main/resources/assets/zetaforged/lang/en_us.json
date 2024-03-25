@@ -1,0 +1,12 @@
+{
+  "block.zetaforged.concern_block": ":concern:",
+  "block.zetaforged.hyperconcern_block": ":hyperconcern:",
+  "block.zetaforged.void": "Void Block",
+  "item.zetaforged.concerned_tater": "Concerned Tater",
+  "block.zetaforged.gigaconcern_block": ":gigaconcern:",
+  "item.zetaforged.keystone": "Keystone",
+  "block.zetaforged.keystone_block": "Keystone Block",
+  "item.zetaforged.crashitem": "Eheheh",
+  "item.zetaforged.op_fireball": "Super Firecharge",
+  "itemGroup.zetaforged.zetaforged_group": "ZetaForged Items"
+}

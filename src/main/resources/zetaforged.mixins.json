@@ -1,0 +1,32 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "zeta.zetaforged.mod.mixins",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "zeta.FarLandsMixins",
+    "zeta.NoiseMixin",
+    "zeta.shard.Shard",
+    "worldborder.supercoder.MixinEntity",
+    "worldborder.supercoder.MixinMinecraftServer",
+    "worldborder.supercoder.MixinPlayerEntity",
+    "worldborder.supercoder.MixinServerPlayNetworkHandler",
+    "worldborder.supercoder.MixinWorld",
+    "worldborder.supercoder.MixinWorldBorder",
+    "worldborder.supercoder.MixinWorldBorderProperties",
+    "zeta.FireballFix",
+    "worldborder.supercoder.beta.MixinAquafierSampler",
+    "worldborder.zeta.MixinLinkedBlockPosHashSetStorage",
+    "worldborder.zeta.MixinWorldBorderCommand",
+    "zeta.accessors.PerlinNoiseSamplerAccessor",
+    "worldborder.zeta.MixinWorldView",
+    "zeta.IndividualNoiseMixin",
+    "zeta.SpawnEggFixMixin"
+  ],
+  "client": [
+    "zeta.client.MixinTitleScreen"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ttt",
+    "tdt",
+    "ttt"
+  ],
+  "key": {
+    "t": {
+      "item": "minecraft:potato"
+    },
+    "d": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "zetaforged:tater_block",
+    "count": 1
+  }
+}

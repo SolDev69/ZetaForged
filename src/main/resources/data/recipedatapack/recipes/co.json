@@ -1,0 +1,20 @@
+{
+	"type": "crafting_shaped",
+	"pattern": [
+		"###",
+		"#C#",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:coal"
+		},
+		"C": {
+			"item": "minecraft:stick"
+		}
+	},
+	"result": {
+		"item": "minecraft:iron_ingot",
+		"count": 1
+	}
+}

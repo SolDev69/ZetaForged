@@ -1,0 +1,16 @@
+{
+	"type": "crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:emerald"
+		},
+		{
+			"item": "minecraft:redstone"
+		}
+	],
+	"result": {
+		"item": "minecraft:redstone_block",
+		"count": 1
+
+	}
+}

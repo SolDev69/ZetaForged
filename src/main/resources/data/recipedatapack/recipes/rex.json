@@ -1,0 +1,19 @@
+{
+	"type": "crafting_shaped",
+	"pattern": [
+		"#",
+		"C"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:water_bucket"
+		},
+		"C": {
+			"item": "minecraft:lava_bucket"
+		}
+	},
+	"result": {
+		"item": "minecraft:obsidian",
+		"count": 1
+	}
+}

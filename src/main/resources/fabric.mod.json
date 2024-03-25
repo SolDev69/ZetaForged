@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "zetaforged",
+  "version": "${version}",
+
+  "name": "ZetaForged",
+  "description": "A mod that does many things!",
+  "authors": [
+    "Zeta"
+  ],
+  "contact": {
+    "homepage": "https://github.com/TwelvianZeta/zetaforged",
+    "sources": "https://github.com/TwelvianZeta/zetaforged"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/zetaforged/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "zeta.zetaforged.mod.ZetaForged",
+      "zeta.zetaforged.mod.features.items.CrashItemInitializer",
+      "zeta.zetaforged.mod.managers.GeneralManager",
+      "zeta.zetaforged.mod.managers.portals.PortalManager",
+      "zeta.zetaforged.mod.features.keystone.Keystone",
+      "zeta.zetaforged.mod.features.worldgen.StructureRegistry",
+      "zeta.zetaforged.mod.features.entities.EntityRegistry"
+    ],
+    "client": [
+    ],
+    "server": []
+  },
+  "mixins": [
+    "zetaforged.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  },
+  "accessWidener": "zetaforged.accesswidener"
+}

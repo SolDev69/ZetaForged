@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    "sss",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "zetaforged:keystone"
+    }
+  },
+  "result": {
+    "item": "zetaforged:keystone_block",
+    "count": 1
+  }
+}

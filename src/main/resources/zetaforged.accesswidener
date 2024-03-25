@@ -1,0 +1,32 @@
+accessWidener v1 named
+
+accessible class net/minecraft/world/border/WorldBorder$Area
+accessible class net/minecraft/world/border/WorldBorder$StaticArea
+
+# For shard farlands
+
+accessible method net/minecraft/util/math/noise/SimplexNoiseSampler dot ([IDDD)D
+accessible field net/minecraft/util/math/noise/SimplexNoiseSampler GRADIENTS [[I
+accessible method net/minecraft/util/math/noise/PerlinNoiseSampler sampleDerivative (IIIDDD[D)D
+
+accessible class net/minecraft/world/gen/chunk/AquiferSampler$Impl$FluidLevel
+accessible class net/minecraft/world/gen/chunk/AquiferSampler$Impl
+accessible class net/minecraft/util/collection/LinkedBlockPosHashSet$Storage
+accessible method net/minecraft/server/command/WorldBorderCommand executeBuffer (Lnet/minecraft/server/command/ServerCommandSource;F)I
+accessible method net/minecraft/server/command/WorldBorderCommand executeDamage (Lnet/minecraft/server/command/ServerCommandSource;F)I
+accessible method net/minecraft/server/command/WorldBorderCommand executeCenter (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/util/math/Vec2f;)I
+accessible method net/minecraft/server/command/WorldBorderCommand executeCenter (Lnet/minecraft/server/command/ServerCommandSource;Lnet/minecraft/util/math/Vec2f;)I
+accessible method net/minecraft/server/command/WorldBorderCommand executeGet (Lnet/minecraft/server/command/ServerCommandSource;)I
+accessible method net/minecraft/server/command/WorldBorderCommand executeWarningDistance (Lnet/minecraft/server/command/ServerCommandSource;I)I
+accessible method net/minecraft/server/command/WorldBorderCommand executeWarningTime (Lnet/minecraft/server/command/ServerCommandSource;I)I
+accessible field net/minecraft/server/command/WorldBorderCommand SET_FAILED_BIG_EXCEPTION Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+
+# Mutables
+mutable field net/minecraft/util/collection/LinkedBlockPosHashSet$Storage STARTING_OFFSET I
+mutable field net/minecraft/util/collection/LinkedBlockPosHashSet$Storage HORIZONTAL_COLUMN_BIT_SEPARATION I
+mutable field net/minecraft/server/command/WorldBorderCommand SET_FAILED_BIG_EXCEPTION Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+
+# Hopefully fix incompats
+
+accessible method net/minecraft/world/World isInvalidVertically (I)Z
+accessible method net/minecraft/world/World isValidHorizontally (Lnet/minecraft/util/math/BlockPos;)Z
