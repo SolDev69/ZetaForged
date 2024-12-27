@@ -99,6 +99,7 @@ public class CommandsManager {
                     ))
                     .then(literal("toggleOpFireballs").executes(
                             context -> {
+                                context.getSource().sendFeedback(new LiteralText("OP Fireballs " + (getConfig().fixFireballs.getValue() ? "enabled!" : "disabled!")), true);
                                 getConfig().fixFireballs.setValue(!getConfig().fixFireballs.getValue());
                                 return 7;
                             }
@@ -108,7 +109,7 @@ public class CommandsManager {
                                     executes(
                                     context -> {
                                         GeneralManager.getConfig().coordinateScale.setValue(GeneralManager.getConfig().coordinateScale.getValue() * 2);
-
+                                        context.getSource().sendFeedback(new LiteralText("Set coordinate scale to " + GeneralManager.getConfig().coordinateScale.getValue()), true);
                                         return 2;
                                     }
                             )
@@ -117,6 +118,7 @@ public class CommandsManager {
                                     executes(
                                             context -> {
                                                 getConfig().coordinateScale.setValue(getConfig().coordinateScale.getDefaultValue());
+                                                context.getSource().sendFeedback(new LiteralText("Reset coordinate scale"), true);
                                                 return -2;
                                             }
                                     )

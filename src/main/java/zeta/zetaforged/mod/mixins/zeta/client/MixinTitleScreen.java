@@ -60,11 +60,11 @@ public class MixinTitleScreen extends Screen {
         )
             drawStringWithShadow(matrices, this.textRenderer, "HAPPY BIRTHDAY ZETAFORGED!", 2, 2, 0xffff00 | l);
         /* TODO: move this to the API later */ drawStringWithShadow(matrices, this.textRenderer, "Mods Loaded: " + (FabricLoader.getInstance().getAllMods().toArray().length-54), 2, this.height - 30, 16777215|l);
-        if(System.getProperty("java.version").startsWith("16") || System.getProperty("java.version").startsWith("17")) {
+        if(System.getProperty("java.version").startsWith("16") || System.getProperty("java.version").startsWith("17") || System.getProperty("java.version").startsWith("21")) {
             drawStringWithShadow(matrices, this.textRenderer, "Running on java version " + System.getProperty("java.version"), 2, this.height - 40, 16777215|l);
         } else {
             drawStringWithShadow(matrices, this.textRenderer, "Running on java version " + System.getProperty("java.version"), 2, this.height - 50, 16777215|l);
-            drawStringWithShadow(matrices, this.textRenderer, "WARNING! It is recommended you play on java 16 or 17 for maximum stability", 2, this.height - 40, 16777215|l);
+            drawStringWithShadow(matrices, this.textRenderer, "WARNING! It is recommended you play on java 16, 17, or 21 for maximum stability", 2, this.height - 40, 16777215|l);
 
             //drawStringWithShadow(matrices, this.textRenderer, "Bugs specific to java 18 and 19 won't be fixed. You have been warned!", 2, this.height - 40, 16777215|l);
 
