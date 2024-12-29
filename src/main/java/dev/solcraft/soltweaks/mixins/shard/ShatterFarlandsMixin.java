@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import dev.solcraft.soltweaks.managers.GeneralManager;
 
 @Mixin(value = PerlinNoiseSampler.class, priority = 999)
-public abstract class Shard {
+public abstract class ShatterFarlandsMixin {
     private boolean logged = false;
 
     @Shadow
@@ -66,7 +66,7 @@ public abstract class Shard {
         int j = MathHelper.floor(e);
         int k = MathHelper.floor(f);
         double g, h, l;
-        if (GeneralManager.getConfig().shardFarLands.getValue()) {
+        if (Boolean.TRUE.equals(GeneralManager.getConfig().shardFarLands.getValue())) {
             g = d - (float) i;
             h = e - (float) j;
             l = f - (float) k;
@@ -79,7 +79,7 @@ public abstract class Shard {
     }
 
     @Shadow
-    private double sampleDerivative(int sectionX, int sectionY, int sectionZ, double localX, double localY, double localZ, double[] ds) {
+    public double sampleDerivative(int sectionX, int sectionY, int sectionZ, double localX, double localY, double localZ, double[] ds) {
         throw new AssertionError();
     }
 

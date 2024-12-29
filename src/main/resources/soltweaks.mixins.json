@@ -6,7 +6,7 @@
   "mixins": [
     "FarLandsMixins",
     "NoiseMixin",
-    "shard.Shard",
+    "shard.ShatterFarlandsMixin",
     "worldborder.supercoder.MixinEntity",
     "worldborder.supercoder.MixinMinecraftServer",
     "worldborder.supercoder.MixinPlayerEntity",
