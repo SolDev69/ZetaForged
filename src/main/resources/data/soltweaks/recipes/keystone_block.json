@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    "sss",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "soltweaks:keystone"
+    }
+  },
+  "result": {
+    "item": "soltweaks:keystone_block",
+    "count": 1
+  }
+}

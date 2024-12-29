@@ -1,0 +1,12 @@
+{
+  "block.soltweaks.concern_block": ":concern:",
+  "block.soltweaks.hyperconcern_block": ":hyperconcern:",
+  "block.soltweaks.void": "Void Block",
+  "item.soltweaks.concerned_tater": "Concerned Tater",
+  "block.soltweaks.gigaconcern_block": ":gigaconcern:",
+  "item.soltweaks.keystone": "Keystone",
+  "block.soltweaks.keystone_block": "Keystone Block",
+  "item.soltweaks.crashitem": "Eheheh",
+  "item.soltweaks.op_fireball": "Super Firecharge",
+  "itemGroup.soltweaks.soltweaks_group": "SolTweaks Items"
+}

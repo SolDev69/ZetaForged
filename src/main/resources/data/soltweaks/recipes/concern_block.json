@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "soltweaks:concerned_tater"
+    }
+  },
+  "result": {
+    "item": "soltweaks:concern_block",
+    "count": 1
+  }
+}
