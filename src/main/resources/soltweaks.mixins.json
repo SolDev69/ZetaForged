@@ -1,12 +1,12 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "dev.solcraft.soltweaks.mod.mixins",
+  "package": "dev.solcraft.soltweaks.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "soldev.FarLandsMixins",
-    "soldev.NoiseMixin",
-    "soldev.shard.Shard",
+    "FarLandsMixins",
+    "NoiseMixin",
+    "shard.Shard",
     "worldborder.supercoder.MixinEntity",
     "worldborder.supercoder.MixinMinecraftServer",
     "worldborder.supercoder.MixinPlayerEntity",
@@ -14,17 +14,17 @@
     "worldborder.supercoder.MixinWorld",
     "worldborder.supercoder.MixinWorldBorder",
     "worldborder.supercoder.MixinWorldBorderProperties",
-    "soldev.FireballFix",
+    "FireballFix",
     "worldborder.supercoder.beta.MixinAquafierSampler",
     "worldborder.zeta.MixinLinkedBlockPosHashSetStorage",
     "worldborder.zeta.MixinWorldBorderCommand",
-    "soldev.accessors.PerlinNoiseSamplerAccessor",
+    "accessors.PerlinNoiseSamplerAccessor",
     "worldborder.zeta.MixinWorldView",
-    "soldev.IndividualNoiseMixin",
-    "soldev.SpawnEggFixMixin"
+    "IndividualNoiseMixin",
+    "SpawnEggFixMixin"
   ],
   "client": [
-    "soldev.client.MixinTitleScreen"
+    "client.MixinTitleScreen"
   ],
   "injectors": {
     "defaultRequire": 1
