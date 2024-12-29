@@ -1,8 +1,8 @@
 package dev.solcraft.soltweaks.features.materials;
 
+import dev.solcraft.soltweaks.features.items.keystone.KeystoneRegistry;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-import dev.solcraft.soltweaks.features.keystone.Keystone;
 
 public class KeystoneToolMaterial implements ToolMaterial {
     public int durability = 1920;
@@ -10,7 +10,7 @@ public class KeystoneToolMaterial implements ToolMaterial {
     public float attackDamage = 3.5f;
     public int miningLevel = 5;
     public int enchantability = 16;
-    public Ingredient repairIngredient = Ingredient.ofItems(Keystone.KEYSTONE);
+    public Ingredient repairIngredient = Ingredient.ofItems(KeystoneRegistry.KEYSTONE);
     @Override
     public int getDurability() {
         return durability;

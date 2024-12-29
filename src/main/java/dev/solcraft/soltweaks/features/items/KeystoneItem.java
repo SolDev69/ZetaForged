@@ -1,4 +1,4 @@
-package dev.solcraft.soltweaks.features.keystone;
+package dev.solcraft.soltweaks.features.items;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

@@ -161,9 +161,6 @@ public class SolTweaks implements ModInitializer {
 
 
 		BiomesInitializer.initializeBiomes();
-		log(Level.INFO, "Registering extra items...");
-		RegisterVoidItems items = new RegisterVoidItems();
-		items.registerItems();
 		//log(Level.INFO, "DONE!");
 	}
 

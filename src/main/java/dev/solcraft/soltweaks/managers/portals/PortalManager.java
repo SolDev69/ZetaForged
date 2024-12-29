@@ -1,15 +1,14 @@
 package dev.solcraft.soltweaks.managers.portals;
 
-import dev.solcraft.soltweaks.features.keystone.KeystoneItem;
+import dev.solcraft.soltweaks.features.items.SolTweaksItems;
 import net.fabricmc.api.ModInitializer;
-import net.kyrptonaught.customportalapi.CustomPortalApiRegistry;
 import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import dev.solcraft.soltweaks.SolTweaks;
 import dev.solcraft.soltweaks.features.items.RegisterVoidItems;
-import dev.solcraft.soltweaks.features.keystone.Keystone;
+import dev.solcraft.soltweaks.features.items.keystone.KeystoneRegistry;
 
 public class PortalManager implements ModInitializer {
     @Override
@@ -22,10 +21,10 @@ public class PortalManager implements ModInitializer {
                 .registerPortal();
 
         CustomPortalBuilder.beginPortal()
-                .frameBlock(Keystone.KEYSTONE_BLOCK)
+                .frameBlock(SolTweaksItems.KEYSTONE_BLOCK)
                 .destDimID(new Identifier(SolTweaks.MOD_ID, "etheral"))
                 .tintColor(127, 127, 0)
-                .lightWithItem(Keystone.KEYSTONE)
+                .lightWithItem(SolTweaksItems.KEYSTONE)
                 .registerPortal();
 
         CustomPortalBuilder.beginPortal()
@@ -36,7 +35,7 @@ public class PortalManager implements ModInitializer {
                 .registerPortal();
 
         CustomPortalBuilder.beginPortal()
-                .frameBlock(RegisterVoidItems.VoidBlock_BLOCK)
+                .frameBlock(SolTweaksItems.VoidBlock_BLOCK)
                 .destDimID(new Identifier(SolTweaks.MOD_ID, "void_dimension"))
                 .tintColor(0, 0, 0)
                 .lightWithWater()

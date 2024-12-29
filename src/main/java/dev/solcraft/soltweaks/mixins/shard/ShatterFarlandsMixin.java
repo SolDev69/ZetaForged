@@ -66,15 +66,7 @@ public abstract class ShatterFarlandsMixin {
         int j = MathHelper.floor(e);
         int k = MathHelper.floor(f);
         double g, h, l;
-        if (Boolean.TRUE.equals(GeneralManager.getConfig().shardFarLands.getValue())) {
-            g = d - (float) i;
-            h = e - (float) j;
-            l = f - (float) k;
-        } else {
-            g = d - (double) i;
-            h = e - (double) j;
-            l = f - (double) k;
-        }
+
         cir.setReturnValue(sampleDerivative(i, j, k, g, h, l, ds));
     }
 

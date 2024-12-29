@@ -6,7 +6,7 @@
   "name": "SolTweaks",
   "description": "A mod that does many things!",
   "authors": [
-    "SolCraftDevelope69r"
+    "SolCraftDeveloper69"
   ],
   "contact": {
     "homepage": "https://github.com/SolDev69/ZetaForged",
@@ -23,7 +23,6 @@
       "dev.solcraft.soltweaks.features.items.CrashItemInitializer",
       "dev.solcraft.soltweaks.managers.GeneralManager",
       "dev.solcraft.soltweaks.managers.portals.PortalManager",
-      "dev.solcraft.soltweaks.features.keystone.Keystone",
       "dev.solcraft.soltweaks.features.worldgen.StructureRegistry",
       "dev.solcraft.soltweaks.features.entities.EntityRegistry"
     ],
