@@ -19,13 +19,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "zeta.soltweaks.mod.SolTweaks",
-      "zeta.soltweaks.mod.features.items.CrashItemInitializer",
-      "zeta.soltweaks.mod.managers.GeneralManager",
-      "zeta.soltweaks.mod.managers.portals.PortalManager",
-      "zeta.soltweaks.mod.features.keystone.Keystone",
-      "zeta.soltweaks.mod.features.worldgen.StructureRegistry",
-      "zeta.soltweaks.mod.features.entities.EntityRegistry"
+      "dev.solcraft.soltweaks.SolTweaks",
+      "dev.solcraft.soltweaks.features.items.CrashItemInitializer",
+      "dev.solcraft.soltweaks.managers.GeneralManager",
+      "dev.solcraft.soltweaks.managers.portals.PortalManager",
+      "dev.solcraft.soltweaks.features.keystone.Keystone",
+      "dev.solcraft.soltweaks.features.worldgen.StructureRegistry",
+      "dev.solcraft.soltweaks.features.entities.EntityRegistry"
     ],
     "client": [
     ],

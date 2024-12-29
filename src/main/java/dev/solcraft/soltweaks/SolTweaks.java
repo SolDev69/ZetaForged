@@ -76,7 +76,7 @@ public class SolTweaks implements ModInitializer {
 	public static final Block CONCERN_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).hardness(4.0f));
 	public static final Block HYPERCONCERN_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).hardness(4.0f));
 	public static final ConcernedTater CONCERNED_TATER = new ConcernedTater(new FabricItemSettings().group(SolTweaks.SOLTWEAKS_ITEMS));
-	//public static final Item EXAMPLE_ITEM = Registry.register(Registry.ITEM,new Identifier("mymodid","example_item"), new Item(new FabricItemSettings().group(zeta.soltweaks.mod.SolTweaks.SOLTWEAKS_ITEMS)));
+	//public static final Item EXAMPLE_ITEM = Registry.register(Registry.ITEM,new Identifier("mymodid","example_item"), new Item(new FabricItemSettings().group(dev.solcraft.soltweaks.SolTweaks.SOLTWEAKS_ITEMS)));
 
 	public static final Level LV = Level.INFO;
 	public static double concerning_weight = Math.pow(2, -4);
