@@ -1,8 +1,11 @@
 package dev.solcraft.soltweaks.managers.portals;
 
+import dev.solcraft.soltweaks.features.keystone.KeystoneItem;
 import net.fabricmc.api.ModInitializer;
 import net.kyrptonaught.customportalapi.CustomPortalApiRegistry;
+import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import dev.solcraft.soltweaks.SolTweaks;
 import dev.solcraft.soltweaks.features.items.RegisterVoidItems;
@@ -11,20 +14,34 @@ import dev.solcraft.soltweaks.features.keystone.Keystone;
 public class PortalManager implements ModInitializer {
     @Override
     public void onInitialize() {
-        CustomPortalApiRegistry.addPortal(Blocks.MOSS_BLOCK,
-                new Identifier(SolTweaks.MOD_ID, "lush_nether"),
-                0, 64, 8);
-        CustomPortalApiRegistry.addPortal(Keystone.KEYSTONE_BLOCK,
-                new Identifier(SolTweaks.MOD_ID, "etheral"),
-                127, 127, 0);
-        CustomPortalApiRegistry.addPortal(SolTweaks.GIGACONCERN_BLOCK,
-                new Identifier(SolTweaks.MOD_ID, "concerningworld"),
-                32, 105, 168
-        );
-        CustomPortalApiRegistry.addPortal(RegisterVoidItems.VoidBlock_BLOCK,
-                new Identifier(SolTweaks.MOD_ID, "void_dimension"),
-                0,0,0
-        );
+        CustomPortalBuilder.beginPortal()
+                .frameBlock(Blocks.MOSS_BLOCK)
+                .destDimID(new Identifier(SolTweaks.MOD_ID, "lush_nether"))
+                .tintColor(0,64,8)
+                .lightWithWater()
+                .registerPortal();
+
+        CustomPortalBuilder.beginPortal()
+                .frameBlock(Keystone.KEYSTONE_BLOCK)
+                .destDimID(new Identifier(SolTweaks.MOD_ID, "etheral"))
+                .tintColor(127, 127, 0)
+                .lightWithItem(Keystone.KEYSTONE)
+                .registerPortal();
+
+        CustomPortalBuilder.beginPortal()
+                .frameBlock(SolTweaks.GIGACONCERN_BLOCK)
+                .destDimID(new Identifier(SolTweaks.MOD_ID, "concerningworld"))
+                .tintColor(32, 105, 168)
+                .lightWithItem(Items.FLINT_AND_STEEL)
+                .registerPortal();
+
+        CustomPortalBuilder.beginPortal()
+                .frameBlock(RegisterVoidItems.VoidBlock_BLOCK)
+                .destDimID(new Identifier(SolTweaks.MOD_ID, "void_dimension"))
+                .tintColor(0, 0, 0)
+                .lightWithWater()
+                .registerPortal();
+
 
     }
     public Identifier ZMI(String name) {

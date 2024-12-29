@@ -21,9 +21,7 @@ repositories {
 		url "https://maven.shedaniel.me/"
 	}
 	maven {
-		name = "Portals"
-		url = "http://maven.kyrptonaught.dev"
-		allowInsecureProtocol = true
+		url "https://maven.kyrptonaught.dev"
 	}
 	maven {
 		url "https://repo.repsy.io/mvn/zeta/stuff"
@@ -31,7 +29,9 @@ repositories {
 	//flatDir {
 	//	dirs 'lib'
 	//}
-	maven { url 'https://jitpack.io' }
+	maven {
+		url 'https://jitpack.io'
+	}
 }
 
 loom {
