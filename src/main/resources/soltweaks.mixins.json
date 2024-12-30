@@ -19,6 +19,7 @@
     "worldborder.zeta.MixinLinkedBlockPosHashSetStorage",
     "worldborder.zeta.MixinWorldBorderCommand",
     "accessors.PerlinNoiseSamplerAccessor",
+    "accessors.WorldBorderCommandAccessor",
     "worldborder.zeta.MixinWorldView",
     "IndividualNoiseMixin",
     "SpawnEggFixMixin"

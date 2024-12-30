@@ -18,7 +18,7 @@ public abstract class MixinWorld implements WorldAccess {
 	 * @reason
 	 */
 	@Overwrite @Final
-	public static boolean isValidHorizontally(BlockPos pos) {
+	private static boolean isValidHorizontally(BlockPos pos) {
 		return pos.getX() >= Integer.MIN_VALUE && pos.getZ() >= Integer.MIN_VALUE && pos.getX() < Integer.MAX_VALUE && pos.getZ() < Integer.MAX_VALUE;
 	}
 
@@ -29,7 +29,7 @@ public abstract class MixinWorld implements WorldAccess {
 	 * @reason
 	 */
 	@Overwrite @Final
-	public static boolean isInvalidVertically(int y) {
+	private static boolean isInvalidVertically(int y) {
 		return y < Integer.MIN_VALUE || y >= Integer.MAX_VALUE;
 	}
 
