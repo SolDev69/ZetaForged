@@ -1,11 +1,11 @@
 package dev.solcraft.soltweaks.features.materials;
 
+import dev.solcraft.soltweaks.features.items.SolTweaksItems;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import dev.solcraft.soltweaks.features.items.keystone.KeystoneRegistry;
 
 public class KeystoneArmorMaterial implements ArmorMaterial {
     private static final int[] BASE_DURABILITY = new int[] {13, 15, 16, 11};
@@ -32,7 +32,7 @@ public class KeystoneArmorMaterial implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(KeystoneRegistry.KEYSTONE);
+        return Ingredient.ofItems(SolTweaksItems.KEYSTONE);
     }
 
     @Override

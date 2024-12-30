@@ -7,8 +7,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import dev.solcraft.soltweaks.SolTweaks;
-import dev.solcraft.soltweaks.features.items.RegisterVoidItems;
-import dev.solcraft.soltweaks.features.items.keystone.KeystoneRegistry;
 
 public class PortalManager implements ModInitializer {
     @Override

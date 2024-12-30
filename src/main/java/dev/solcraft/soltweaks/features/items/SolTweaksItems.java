@@ -2,7 +2,6 @@ package dev.solcraft.soltweaks.features.items;
 
 import dev.solcraft.soltweaks.SolTweaks;
 import dev.solcraft.soltweaks.features.blocks.VoidBlock;
-import dev.solcraft.soltweaks.features.items.keystone.KeystoneArmor;
 import dev.solcraft.soltweaks.features.items.tools.wideners.AxeItem;
 import dev.solcraft.soltweaks.features.items.tools.wideners.TillerItem;
 import dev.solcraft.soltweaks.features.materials.KeystoneArmorMaterial;

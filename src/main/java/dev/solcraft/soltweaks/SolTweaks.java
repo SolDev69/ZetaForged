@@ -30,7 +30,6 @@ import net.minecraft.world.biome.BiomeKeys;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Level;
-import dev.solcraft.soltweaks.features.items.RegisterVoidItems;
 import dev.solcraft.soltweaks.managers.ConfigManager;
 
 public class SolTweaks implements ModInitializer {
