@@ -136,15 +136,15 @@ public class ConfigManager  {
     
     public ConfigValue<Double> worldBorderMaxSize = ConfigValue.builder(Double.class)
             .withName("worldBorderMaxSize")
-            .withComment("The maximum size of the worldborder (default: 4294967294, requires 'expandWorldBorder' to be true.")
-            .withDefaultValue(4294967294D)
+            .withComment("The maximum size of the world/worldborder (default: 4000000000, max: 4294967294, requires 'expandWorldBorder' to be true.")
+            .withDefaultValue(4E9D)
             .withParent(world)
             .build();
 
     public ConfigValue<Double> worldBorderSize = ConfigValue.builder(Double.class)
             .withName("worldBorderSize")
-            .withComment("The default size of the worldborder (default: 2000000000D, requires 'expandWorldBorder' to be true.")
-            .withDefaultValue(2E9D)
+            .withComment("The default size of the worldborder (default: 3999999990D, requires 'expandWorldBorder' to be true.")
+            .withDefaultValue(3999999990D)
             .withParent(world)
             .build();
     
