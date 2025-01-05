@@ -4,6 +4,7 @@ accessible class net/minecraft/world/border/WorldBorder$Area
 accessible class net/minecraft/world/border/WorldBorder$StaticArea
 
 accessible field net/minecraft/server/command/WorldBorderCommand SET_FAILED_BIG_EXCEPTION Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
+mutable field net/minecraft/server/command/WorldBorderCommand SET_FAILED_BIG_EXCEPTION Lcom/mojang/brigadier/exceptions/SimpleCommandExceptionType;
 
 accessible class net/minecraft/world/gen/chunk/AquiferSampler$Impl$FluidLevel
 accessible class net/minecraft/world/gen/chunk/AquiferSampler$Impl

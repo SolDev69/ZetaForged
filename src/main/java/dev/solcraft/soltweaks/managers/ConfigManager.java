@@ -1,5 +1,6 @@
 package dev.solcraft.soltweaks.managers;
 
+import com.ibm.icu.impl.Relation;
 import me.zeroeightsix.fiber.JanksonSettings;
 import me.zeroeightsix.fiber.exception.FiberException;
 import me.zeroeightsix.fiber.tree.ConfigNode;
@@ -33,6 +34,7 @@ public class ConfigManager  {
     public static boolean farlandsDefaultValue() {
         return true;
     }
+
     public ConfigValue<Boolean> useClassicVersionString = ConfigValue.builder(Boolean.class)
             .withName("useClassicVersionString")
             .withComment("This will add back the \"v\" before the version number and the extra 0 at the end if no minor version is found")
@@ -127,45 +129,29 @@ public class ConfigManager  {
             .build();
     public ConfigValue<Boolean> worldborderExpansion = ConfigValue.builder(Boolean.class)
             .withName("expandWorldBorder")
-            .withComment("Will be the config value to expand worldborder in a later version")
+            .withComment("Enable worldborder expansion beyond 60 million blocks (default: true)")
             .withDefaultValue(true)
             .withParent(world)
             .build();
+    
+    public ConfigValue<Double> worldBorderMaxSize = ConfigValue.builder(Double.class)
+            .withName("worldBorderMaxSize")
+            .withComment("The maximum size of the worldborder (default: 4294967294, requires 'expandWorldBorder' to be true.")
+            .withDefaultValue(4294967294D)
+            .withParent(world)
+            .build();
+
+    public ConfigValue<Double> worldBorderSize = ConfigValue.builder(Double.class)
+            .withName("worldBorderSize")
+            .withComment("The default size of the worldborder (default: 2000000000D, requires 'expandWorldBorder' to be true.")
+            .withDefaultValue(2E9D)
+            .withParent(world)
+            .build();
+    
     public static ConfigManager getConfig() {
         return GeneralManager.CONFIG;
     }
-    /*
-    private ConfigManager() throws FiberException, IOException {
-        File currentConfigFile = new File(FabricLoader.getInstance().getGameDir().toFile(),
-                CONFIG_FILE.getName() + ".tmp");
-        currentConfigFile.createNewFile();
-        save(currentConfigFile);
-        File configFile = new File(FabricLoader.getInstance().getConfigDirectory(),
-                CONFIG_FILE.getName() + ".tmp");
-        configFile.createNewFile();
-        //if(CONFIG_FILE.exists()) {
-        //    if(currentConfigFile.hashCode() != CONFIG_FILE.hashCode()) {
 
-        //    } else {
-        //        LogManager.getLogger().log(Level.INFO, "Will not delete config file!");
-        //    }
-        //}
-        if((!configFile.exists()) && CONFIG_FILE.exists()) {
-            try {
-                copy(CONFIG_FILE, configFile);
-            } catch (NoSuchFileException e) {
-                e.printStackTrace();
-                throw e;
-            }
-        }
-        if(!HelperUtilities.hash(configFile).equals(HelperUtilities.hash(currentConfigFile))) {
-            logger.error("CONFIG FOUND WITH DIFFERENT HASH, DELETING!");
-            CONFIG_FILE.delete();
-             //configFile.delete();
-        }
-         //currentConfigFile.delete();
-    }
-     */
     public ConfigManager() throws FiberException {}
 
 

@@ -1,6 +1,7 @@
 package dev.solcraft.soltweaks.managers.commands;
 
 
+import dev.solcraft.soltweaks.managers.ConfigManager;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.SharedConstants;
@@ -65,7 +66,13 @@ public class CommandsManager {
                         );
                         return 1;
                     }
-            ).then(literal("debug").executes(context -> {
+            ).then(literal("worldborderSize").executes(ctx -> {
+                ctx.getSource().sendFeedback(new LiteralText(String.valueOf(Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderSize.getValue() : 6E7D)),true);
+                return 0;
+            })).then(literal("worldborderMaxSize").executes(ctx -> {
+                ctx.getSource().sendFeedback(new LiteralText(String.valueOf(Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D)),true);
+                return 0;
+            })).then(literal("debug").executes(context -> {
                 context.getSource().sendError(new LiteralText("this feature was removed, please just use the normal /soltweaks version command"));
                         return 2;
                     })

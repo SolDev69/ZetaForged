@@ -1,5 +1,6 @@
 package dev.solcraft.soltweaks.mixins.worldborder.supercoder;
 
+import dev.solcraft.soltweaks.managers.ConfigManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,7 +17,7 @@ public class MixinWorldBorder {
 
 	@Inject(method = "<init>", at = @At("RETURN"))
 	private void handleConstructor(CallbackInfo ci) {
-		this.maxRadius = Integer.MAX_VALUE;
-		this.area = ((WorldBorder)(Object)this).new StaticArea(4294967294D);
+		this.maxRadius = (int) Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D / 2.0D));
+		this.area = ((WorldBorder)(Object)this).new StaticArea(Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderSize.getValue() : 6E7D);
 	}
 }

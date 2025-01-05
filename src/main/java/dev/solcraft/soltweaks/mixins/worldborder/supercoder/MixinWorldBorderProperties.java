@@ -1,5 +1,6 @@
 package dev.solcraft.soltweaks.mixins.worldborder.supercoder;
 
+import dev.solcraft.soltweaks.managers.ConfigManager;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
@@ -17,11 +18,6 @@ public class MixinWorldBorderProperties {
 
 	@Inject(method = "<init>(DDDDIIDJD)V", at = @At("RETURN"))
 	private void handleConstructor(double centerX, double centerZ, double damagePerBlock, double buffer, int warningBlocks, int warningTime, double size, long targetRemainingTime, double targetSize, CallbackInfo ci) {
-		this.size = 4294967294D;
+		this.size = Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderSize.getValue() : 6E7D;
 	}
-
-	/**
-	 * @author Zeta
-	 * @reason Fix wb
-	 */
 }

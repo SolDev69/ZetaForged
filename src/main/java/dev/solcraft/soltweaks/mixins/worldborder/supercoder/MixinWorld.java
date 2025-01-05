@@ -1,5 +1,6 @@
 package dev.solcraft.soltweaks.mixins.worldborder.supercoder;
 
+import dev.solcraft.soltweaks.managers.ConfigManager;
 import net.minecraft.util.math.ChunkSectionPos;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.WorldAccess;
@@ -30,7 +31,7 @@ public abstract class MixinWorld implements WorldAccess {
 	 */
 	@Overwrite @Final
 	private static boolean isInvalidVertically(int y) {
-		return y < Integer.MIN_VALUE || y >= Integer.MAX_VALUE;
+		return y < -((int) Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D / 2.0D))) || y >= (int) Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D / 2.0D));
 	}
 
 	/**
@@ -39,7 +40,7 @@ public abstract class MixinWorld implements WorldAccess {
 	@Overwrite
 	public int getTopY(Heightmap.Type heightmap, int x, int z) {
 		int k;
-		if (x >= Integer.MIN_VALUE && z >= Integer.MIN_VALUE && x < Integer.MAX_VALUE && z < Integer.MAX_VALUE) {
+		if (x >= -((int) Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D / 2.0D))) && z >= -((int) Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D / 2.0D))) && x < (int) Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D / 2.0D)) && z < (int) Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D / 2.0D))) {
 			if (this.isChunkLoaded(ChunkSectionPos.getSectionCoord(x), ChunkSectionPos.getSectionCoord(z))) {
 				k = this.getChunk(ChunkSectionPos.getSectionCoord(x), ChunkSectionPos.getSectionCoord(z)).sampleHeightmap(heightmap, x & 15, z & 15) + 1;
 			} else {

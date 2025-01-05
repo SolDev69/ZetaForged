@@ -8,6 +8,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import dev.solcraft.soltweaks.managers.ConfigManager;
 import dev.solcraft.soltweaks.mixins.accessors.WorldBorderCommandAccessor;
 import net.minecraft.command.argument.Vec2ArgumentType;
 import net.minecraft.server.command.CommandManager;
@@ -28,22 +29,21 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Locale;
 
-import static net.minecraft.server.command.WorldBorderCommand.*;
-
 @Mixin(WorldBorderCommand.class)
 public abstract class MixinWorldBorderCommand {
     @Shadow
-    private static SimpleCommandExceptionType SET_FAILED_BIG_EXCEPTION;
+    public static SimpleCommandExceptionType SET_FAILED_BIG_EXCEPTION;
 
     @Shadow
     @Final
     private static SimpleCommandExceptionType SET_FAILED_NO_CHANGE_EXCEPTION;
-    @Shadow@Final
+    @Shadow
+    @Final
     private static SimpleCommandExceptionType SET_FAILED_SMALL_EXCEPTION;
 
     @Inject(method = "<clinit>", at = @At("RETURN"))
     private static void handleConstructor(CallbackInfo ci) {
-         SET_FAILED_BIG_EXCEPTION = new SimpleCommandExceptionType(new TranslatableText("commands.worldborder.set.failed.big", 4294967294D));
+         SET_FAILED_BIG_EXCEPTION = new SimpleCommandExceptionType(new TranslatableText("commands.worldborder.set.failed.big", Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D);
     }
     /**
      * @author Zeta
@@ -55,11 +55,11 @@ public abstract class MixinWorldBorderCommand {
         dispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) CommandManager.literal("worldborder").requires((source) -> {
             return source.hasPermissionLevel(2);
 //TODO: Change these back and remove static import
-        })).then(CommandManager.literal("add").then(((RequiredArgumentBuilder)CommandManager.argument("distance", DoubleArgumentType.doubleArg(-4294967294D, 4294967294D)).executes((context) -> {
+        })).then(CommandManager.literal("add").then(((RequiredArgumentBuilder)CommandManager.argument("distance", DoubleArgumentType.doubleArg(-(Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D, Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D).executes((context) -> {
             return WorldBorderCommandAccessor.executeSet((ServerCommandSource)context.getSource(), ((ServerCommandSource)context.getSource()).getWorld().getWorldBorder().getSize() + DoubleArgumentType.getDouble(context, "distance"), 0L);
         })).then(CommandManager.argument("time", IntegerArgumentType.integer(0)).executes((context) -> {
             return WorldBorderCommandAccessor.executeSet((ServerCommandSource)context.getSource(), ((ServerCommandSource)context.getSource()).getWorld().getWorldBorder().getSize() + DoubleArgumentType.getDouble(context, "distance"), ((ServerCommandSource)context.getSource()).getWorld().getWorldBorder().getSizeLerpTime() + (long)IntegerArgumentType.getInteger(context, "time") * 1000L);
-        }))))).then(CommandManager.literal("set").then(((RequiredArgumentBuilder)CommandManager.argument("distance", DoubleArgumentType.doubleArg(-4294967294D, 4294967294D)).executes((context) -> {
+        }))))).then(CommandManager.literal("set").then(((RequiredArgumentBuilder)CommandManager.argument("distance", DoubleArgumentType.doubleArg(-(Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D, Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D).executes((context) -> {
             return WorldBorderCommandAccessor.executeSet((ServerCommandSource)context.getSource(), DoubleArgumentType.getDouble(context, "distance"), 0L);
         })).then(CommandManager.argument("time", IntegerArgumentType.integer(0)).executes((context) -> {
             return WorldBorderCommandAccessor.executeSet((ServerCommandSource)context.getSource(), DoubleArgumentType.getDouble(context, "distance"), (long)IntegerArgumentType.getInteger(context, "time") * 1000L);
@@ -80,6 +80,6 @@ public abstract class MixinWorldBorderCommand {
     // Modify the constant in the executeSet method
     @ModifyConstant(method = "executeSet", constant = @Constant(doubleValue = 5.9999968E7))
     private static double replaceMaxBorderSize(double original) {
-        return 4294967294D;
+        return Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D : 6E7D;
     }
 }

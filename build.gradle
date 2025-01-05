@@ -61,8 +61,8 @@ dependencies {
 	include "me.zeroeightsix:fiber:${project.fiberversion}"
 	//modImplementation "zeta.soltweaks:zetas-api:1.0.0-alpha.2"
 	//include "zeta.soltweaks:zetas-api:1.0.0-alpha.2"
-	modImplementation "com.github.paulevsGitch:BCLib:${project.bclib_version}"
-	include "com.github.paulevsGitch:BCLib:${project.bclib_version}"
+	//modImplementation "com.github.paulevsGitch:BCLib:${project.bclib_version}"
+	//include "com.github.paulevsGitch:BCLib:${project.bclib_version}"
 }
 
 processResources {
