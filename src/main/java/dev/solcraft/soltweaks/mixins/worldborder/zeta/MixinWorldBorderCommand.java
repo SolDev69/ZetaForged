@@ -43,7 +43,7 @@ public abstract class MixinWorldBorderCommand {
 
     @Inject(method = "<clinit>", at = @At("RETURN"))
     private static void handleConstructor(CallbackInfo ci) {
-         SET_FAILED_BIG_EXCEPTION = new SimpleCommandExceptionType(new TranslatableText("commands.worldborder.set.failed.big", Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D);
+         SET_FAILED_BIG_EXCEPTION = new SimpleCommandExceptionType(new TranslatableText("commands.worldborder.set.failed.big", Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D));
     }
     /**
      * @author Zeta
@@ -55,11 +55,11 @@ public abstract class MixinWorldBorderCommand {
         dispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) CommandManager.literal("worldborder").requires((source) -> {
             return source.hasPermissionLevel(2);
 //TODO: Change these back and remove static import
-        })).then(CommandManager.literal("add").then(((RequiredArgumentBuilder)CommandManager.argument("distance", DoubleArgumentType.doubleArg(-(Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D, Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D).executes((context) -> {
+        })).then(CommandManager.literal("add").then(((RequiredArgumentBuilder)CommandManager.argument("distance", DoubleArgumentType.doubleArg(-(Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D), Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D)).executes((context) -> {
             return WorldBorderCommandAccessor.executeSet((ServerCommandSource)context.getSource(), ((ServerCommandSource)context.getSource()).getWorld().getWorldBorder().getSize() + DoubleArgumentType.getDouble(context, "distance"), 0L);
         })).then(CommandManager.argument("time", IntegerArgumentType.integer(0)).executes((context) -> {
             return WorldBorderCommandAccessor.executeSet((ServerCommandSource)context.getSource(), ((ServerCommandSource)context.getSource()).getWorld().getWorldBorder().getSize() + DoubleArgumentType.getDouble(context, "distance"), ((ServerCommandSource)context.getSource()).getWorld().getWorldBorder().getSizeLerpTime() + (long)IntegerArgumentType.getInteger(context, "time") * 1000L);
-        }))))).then(CommandManager.literal("set").then(((RequiredArgumentBuilder)CommandManager.argument("distance", DoubleArgumentType.doubleArg(-(Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D, Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D).executes((context) -> {
+        }))))).then(CommandManager.literal("set").then(((RequiredArgumentBuilder)CommandManager.argument("distance", DoubleArgumentType.doubleArg(-(Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D), Boolean.TRUE.equals(ConfigManager.getConfig().worldborderExpansion.getValue()) ? ConfigManager.getConfig().worldBorderMaxSize.getValue() : 6E7D)).executes((context) -> {
             return WorldBorderCommandAccessor.executeSet((ServerCommandSource)context.getSource(), DoubleArgumentType.getDouble(context, "distance"), 0L);
         })).then(CommandManager.argument("time", IntegerArgumentType.integer(0)).executes((context) -> {
             return WorldBorderCommandAccessor.executeSet((ServerCommandSource)context.getSource(), DoubleArgumentType.getDouble(context, "distance"), (long)IntegerArgumentType.getInteger(context, "time") * 1000L);
