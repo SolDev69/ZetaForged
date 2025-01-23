@@ -20,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.sql.Date;
 import java.time.Instant;
 import java.util.Calendar;
+import java.util.Random;
 
 import static dev.solcraft.soltweaks.SolTweaks.*;
 
@@ -43,7 +44,7 @@ public class MixinTitleScreen extends Screen {
             method = "<init>(Z)V"
     )
     private double handleMinceraft(double original) {
-        return 1.0d;
+        return 0.25d;
     }
     @Inject(at = @At("TAIL"), method = "render")
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta, CallbackInfo ci) {

@@ -13,7 +13,7 @@ jobs:
         # Use these Java versions
         java: [
           # 16,    # Minimum supported by Minecraft, however no longer supported by fabric loom
-          17,    # Java LTS version
+          18,    # Minimum that SolTweaks will run on
           21     # Latest Java LTS version
         ]
         # and run on both Linux and Windows
