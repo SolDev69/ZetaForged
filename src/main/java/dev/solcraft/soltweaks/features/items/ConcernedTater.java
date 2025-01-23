@@ -7,6 +7,9 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
+import java.util.Random;
+import java.util.random.RandomGenerator;
+
 public class ConcernedTater extends Item {
     public ConcernedTater(Settings settings) {
         super(settings);
@@ -16,20 +19,22 @@ public class ConcernedTater extends Item {
         ItemStack itemStack = playerEntity.getStackInHand(hand);
         playerEntity.setHealth(100.0F);
         playerEntity.setMovementSpeed(100F);
-        for(int integer = 0; integer < 5; integer++) {
-            playerEntity.teleport(12550800, 100, 0);
-        }
-        long sleepTime = Short.MAX_VALUE;
-        try {
-            sleep(sleepTime);
-        } catch (InterruptedException e) {
-            try {
-                sleep(sleepTime);
-            } catch (InterruptedException ex) {
-                ex.printStackTrace();
-            }
-        }
-        playerEntity.teleport(0, 100, 0);
+        Random r = new Random();
+        double x = r.nextDouble(r.nextInt(0, 10001) == 10000 ? -Double.MAX_VALUE : -3E7D,r.nextInt(0, 10001) == 10000 ? Double.MAX_VALUE : 3E7D);
+        double y = r.nextDouble(r.nextBoolean() ? -Double.MAX_VALUE : -3E7D,r.nextBoolean() ? Double.MAX_VALUE : 3E7D);
+        double z = r.nextDouble(r.nextInt(0, 10001) == 10000 ? -Double.MAX_VALUE : -3E7D,r.nextInt(0, 10001) == 10000 ? Double.MAX_VALUE : 3E7D);
+        System.out.printf("You rolled a: %f, %f, %f\n", x, y, z);
+        playerEntity.teleport(x, y, z);
+//        long sleepTime = Short.MAX_VALUE;
+//        try {
+//            sleep(sleepTime);
+//        } catch (InterruptedException e) {
+//            try {
+//                sleep(sleepTime);
+//            } catch (InterruptedException ex) {
+//                ex.printStackTrace();
+//            }
+//        }
         itemStack.decrement(1);
         return TypedActionResult.success(itemStack, world.isClient());
         // Fixed concernedtaters in survival
