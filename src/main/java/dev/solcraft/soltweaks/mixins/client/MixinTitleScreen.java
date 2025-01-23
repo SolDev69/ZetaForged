@@ -60,7 +60,7 @@ public class MixinTitleScreen extends Screen {
             drawStringWithShadow(matrices, this.textRenderer, "Running on java version " + System.getProperty("java.version"), 2, this.height - 40, 16777215|l);
         } else {
             drawStringWithShadow(matrices, this.textRenderer, "Running on java version " + System.getProperty("java.version"), 2, this.height - 50, 16777215|l);
-            drawStringWithShadow(matrices, this.textRenderer, "WARNING! It is recommended you play on java 16, 17, or 21 for maximum stability", 2, this.height - 40, 16777215|l);
+            drawStringWithShadow(matrices, this.textRenderer, "WARNING! It is recommended you play on java 21 for maximum stability", 2, this.height - 40, 16777215|l);
 
             //drawStringWithShadow(matrices, this.textRenderer, "Bugs specific to java 18 and 19 won't be fixed. You have been warned!", 2, this.height - 40, 16777215|l);
 
