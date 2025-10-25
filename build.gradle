@@ -36,6 +36,11 @@ repositories {
 
 loom {
 	accessWidenerPath = file('src/main/resources/soltweaks.accesswidener')
+        runs {
+		client {
+			vmArgs "-Xmx8G"
+		}
+	}
 }
 
 dependencies {
